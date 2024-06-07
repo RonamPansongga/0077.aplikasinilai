@@ -1,14 +1,14 @@
 document.getElementById('simpan').addEventListener('click', function() {
     const nim = document.getElementById('nim').value;
     const nama = document.getElementById('nama').value;
-    const presensiTeori = parseFloat(document.getElementById('presensi-teori').value) || 0;
-    const tugasTeori = parseFloat(document.getElementById('tugas-teori').value) || 0;
-    const utsTeori = parseFloat(document.getElementById('uts-teori').value) || 0;
-    const uasTeori = parseFloat(document.getElementById('uas-teori').value) || 0;
-    const presensiPraktek = parseFloat(document.getElementById('presensi-praktek').value) || 0;
-    const tugasPraktek = parseFloat(document.getElementById('tugas-praktek').value) || 0;
-    const utsPraktek = parseFloat(document.getElementById('uts-praktek').value) || 0;
-    const uasPraktek = parseFloat(document.getElementById('uas-praktek').value) || 0;
+    const presensiTeori = parseFloat(document.getElementById('presensi-teori').value:
+    const tugasTeori = parseFloat(document.getElementById('tugas-teori').value;
+    const utsTeori = parseFloat(document.getElementById('uts-teori').value;
+    const uasTeori = parseFloat(document.getElementById('uas-teori').value;
+    const presensiPraktek = parseFloat(document.getElementById('presensi-praktek').value;
+    const tugasPraktek = parseFloat(document.getElementById('tugas-praktek').value;
+    const utsPraktek = parseFloat(document.getElementById('uts-praktek').value;
+    const uasPraktek = parseFloat(document.getElementById('uas-praktek').value;
 
     if (!nim || !nama || !presensiTeori || !tugasTeori || !utsTeori || !uasTeori || !presensiPraktek || !tugasPraktek || !utsPraktek || !uasPraktek) {
         alert("Harap isi semua kolom.");
@@ -49,7 +49,7 @@ document.getElementById('simpan').addEventListener('click', function() {
     row.insertCell(0).innerText = table.rows.length;
     row.insertCell(1).innerText = nim;
     row.insertCell(2).innerText = nama;
-    row.insertCell(3).innerText = ((presensiTeori + presensiPraktek) / 2).toFixed(2);
+    row.insertCell(3).innerText = ((presensiTeoriValue + presensiPraktekValue) / 2).toFixed(2) +'%';
     row.insertCell(4).innerText = ((tugasTeori + tugasPraktek) / 2).toFixed(2);
     row.insertCell(5).innerText = ((utsTeori + utsPraktek) / 2).toFixed(2);
     row.insertCell(6).innerText = ((uasTeori + uasPraktek) / 2).toFixed(2);
