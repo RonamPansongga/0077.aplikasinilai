@@ -1,14 +1,14 @@
 document.getElementById('simpan').addEventListener('click', function() {
     const nim = document.getElementById('nim').value;
     const nama = document.getElementById('nama').value;
-    const presensiTeori = parseFloat(document.getElementById('presensi-teori').value:
-    const tugasTeori = parseFloat(document.getElementById('tugas-teori').value;
-    const utsTeori = parseFloat(document.getElementById('uts-teori').value;
-    const uasTeori = parseFloat(document.getElementById('uas-teori').value;
-    const presensiPraktek = parseFloat(document.getElementById('presensi-praktek').value;
-    const tugasPraktek = parseFloat(document.getElementById('tugas-praktek').value;
-    const utsPraktek = parseFloat(document.getElementById('uts-praktek').value;
-    const uasPraktek = parseFloat(document.getElementById('uas-praktek').value;
+    const presensiTeori = document.getElementById('presensi-teori').value;
+    const tugasTeori = document.getElementById('tugas-teori').value;
+    const utsTeori = document.getElementById('uts-teori').value;
+    const uasTeori = document.getElementById('uas-teori').value;
+    const presensiPraktek = document.getElementById('presensi-praktek').value;
+    const tugasPraktek = document.getElementById('tugas-praktek').value;
+    const utsPraktek = document.getElementById('uts-praktek').value;
+    const uasPraktek = document.getElementById('uas-praktek').value;
 
     if (!nim || !nama || !presensiTeori || !tugasTeori || !utsTeori || !uasTeori || !presensiPraktek || !tugasPraktek || !utsPraktek || !uasPraktek) {
         alert("Harap isi semua kolom.");
@@ -30,7 +30,7 @@ document.getElementById('simpan').addEventListener('click', function() {
     const uasPraktekValue = parseFloat(uasPraktek) || 0;
 
     const nilaiAkhir = ((presensiTeoriValue + tugasTeoriValue + utsTeoriValue + uasTeoriValue) / 4 + (presensiPraktekValue + tugasPraktekValue + utsPraktekValue + uasPraktekValue) / 4) / 2;
-    let grade = ''; 
+    let grade = '';
     
     if (nilaiAkhir >= 80) {
         grade = 'A';
@@ -49,14 +49,13 @@ document.getElementById('simpan').addEventListener('click', function() {
     row.insertCell(0).innerText = table.rows.length;
     row.insertCell(1).innerText = nim;
     row.insertCell(2).innerText = nama;
-    row.insertCell(3).innerText = ((presensiTeoriValue + presensiPraktekValue) / 2).toFixed(2) +'%';
-    row.insertCell(4).innerText = ((tugasTeori + tugasPraktek) / 2).toFixed(2);
-    row.insertCell(5).innerText = ((utsTeori + utsPraktek) / 2).toFixed(2);
-    row.insertCell(6).innerText = ((uasTeori + uasPraktek) / 2).toFixed(2);
+    row.insertCell(3).innerText = ((presensiTeoriValue + presensiPraktekValue) / 2).toFixed(2) + '%';
+    row.insertCell(4).innerText = ((tugasTeoriValue + tugasPraktekValue) / 2).toFixed(2);
+    row.insertCell(5).innerText = ((utsTeoriValue + utsPraktekValue) / 2).toFixed(2);
+    row.insertCell(6).innerText = ((uasTeoriValue + uasPraktekValue) / 2).toFixed(2);
     row.insertCell(7).innerText = nilaiAkhir.toFixed(2);
     row.insertCell(8).innerText = grade;
 
-    
     document.getElementById('nim').value = '';
     document.getElementById('nama').value = '';
     document.getElementById('presensi-teori').value = '';
@@ -70,7 +69,6 @@ document.getElementById('simpan').addEventListener('click', function() {
 });
 
 document.getElementById('batal').addEventListener('click', function() {
-   
     document.getElementById('nim').value = '';
     document.getElementById('nama').value = '';
     document.getElementById('presensi-teori').value = '';
@@ -84,6 +82,5 @@ document.getElementById('batal').addEventListener('click', function() {
 });
 
 document.getElementById('reset').addEventListener('click', function() {
-    
     document.getElementById('nilai-body').innerHTML = '';
 });
