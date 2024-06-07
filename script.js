@@ -10,8 +10,27 @@ document.getElementById('simpan').addEventListener('click', function() {
     const utsPraktek = parseFloat(document.getElementById('uts-praktek').value) || 0;
     const uasPraktek = parseFloat(document.getElementById('uas-praktek').value) || 0;
 
-    const nilaiAkhir = ((presensiTeori + tugasTeori + utsTeori + uasTeori) / 4 + (presensiPraktek + tugasPraktek + utsPraktek + uasPraktek) / 4) / 2;
-    let grade = '';
+    if (!nim || !nama || !presensiTeori || !tugasTeori || !utsTeori || !uasTeori || !presensiPraktek || !tugasPraktek || !utsPraktek || !uasPraktek) {
+        alert("Harap isi semua kolom.");
+        return;
+    }
+
+    if (!/^\d+%?$/.test(presensiTeori) || !/^\d+%?$/.test(presensiPraktek)) {
+        alert("Presensi harus dalam bentuk persen (%).");
+        return;
+    }
+
+    const presensiTeoriValue = parseFloat(presensiTeori.replace('%', '')) || 0;
+    const tugasTeoriValue = parseFloat(tugasTeori) || 0;
+    const utsTeoriValue = parseFloat(utsTeori) || 0;
+    const uasTeoriValue = parseFloat(uasTeori) || 0;
+    const presensiPraktekValue = parseFloat(presensiPraktek.replace('%', '')) || 0;
+    const tugasPraktekValue = parseFloat(tugasPraktek) || 0;
+    const utsPraktekValue = parseFloat(utsPraktek) || 0;
+    const uasPraktekValue = parseFloat(uasPraktek) || 0;
+
+    const nilaiAkhir = ((presensiTeoriValue + tugasTeoriValue + utsTeoriValue + uasTeoriValue) / 4 + (presensiPraktekValue + tugasPraktekValue + utsPraktekValue + uasPraktekValue) / 4) / 2;
+    let grade = ''; 
     
     if (nilaiAkhir >= 80) {
         grade = 'A';
